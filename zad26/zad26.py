@@ -1,4 +1,4 @@
-f = open('26.txt')
+f = open('zad26/26.txt')
 a = list(map(int, f.read(12).split()))
 A = []
 B = []
@@ -13,9 +13,9 @@ class Order(object):
         self.price = int(a[0])
         self.count = int(a[1])
         self.liter = a[2]
+
     def __repr__(self):
         return '(' + str(self.price) + '){' + str(self.count) + '}'
-
 
 
 for i in f:
@@ -26,3 +26,16 @@ for i in f:
 A.sort(key=lambda b: b.price)
 B.sort(key=lambda b: b.price)
 
+for i in A:
+    for j in range(i.count):
+        if a[1] >= i.price:
+            a[1] -= i.price
+        else:
+            break
+for i in B:
+    for j in range(i.count):
+        if a[1] >= i.price:
+            a[1] -= i.price
+        else:
+            break
+print(a)
