@@ -1,4 +1,4 @@
-f = open('zad26/26.txt')
+f = open('26.txt')
 a = list(map(int, f.read(12).split()))
 A = []
 B = []
